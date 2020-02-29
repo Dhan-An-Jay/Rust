@@ -15,5 +15,5 @@ fn main() {
     println!("Const Variable 'CONST_VARIABLE' value is:{} ",shadow_mutable_immutable::CONST_VARIABLE);
     println!("----------------------------");
     data_type::basics_datatypes();
-
+    println!("----------------------------");
 }
