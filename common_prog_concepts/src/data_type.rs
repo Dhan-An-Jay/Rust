@@ -117,7 +117,7 @@ fn arrays_datatype()
     // definied array with 5 size and iniitalize it
     let arr2:[i32;5] =[11,12,13,14,15];
     for i in 0..5{
-        println!("at {} Possition {}",i+1,arr1[i]);
+        println!("at {} Possition {}",i+1,arr2[i]);
     }
 
    
@@ -125,7 +125,7 @@ fn arrays_datatype()
     for i in 0..6{ // array size is 5 and we are printing up to 6
         println!("at {} Possition {}",i+1,arr1[i]);
     }
-    
+
     DhanAnJays-MacBook:common_prog_concepts dhananjay$ cargo run
     thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 5', src/data_type.rs:120:43
     note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
