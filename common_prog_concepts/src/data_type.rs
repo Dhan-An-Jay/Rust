@@ -1,9 +1,20 @@
 // data types implementation is done inside this file for basic understandings
 // programmer name  : Dhananjay Ahire 
 // Basics of rust data types
-
+/*
+1. scalar types 
+   a. int
+   b. float
+   c. char
+   d. number
+   e. bool
+2. compound types 
+   a. tuple
+   b. array 
+*/
 use std::io;
 #[allow(unused_imports)]
+#[allow(dead_code)]
 //#[allow(non_snake_case)]
 fn data_conversion()
 {
@@ -54,13 +65,82 @@ fn bool_datatype()
     println!("Bolean a:{} and Bolean b:{}",a,b);
 
 }
+fn char_datatypes()
+{
+    let a = 'A';
+    let b = '💣';
+    let c:char ='😻';
+    println!("values a:{}, b:{} and c:{}",a,b,c);
+}
 pub fn basics_datatypes()
 {
-    data_conversion();
-    println!("----------------------------");
+    //data_conversion();
+    //println!("----------------------------");
     int_datatypes();
     println!("----------------------------");
     float_datatype();
     println!("----------------------------");
     bool_datatype();
+    println!("----------------------------");
+    char_datatypes();
+}
+fn tuple_datatypes()
+{
+    // tuple can content different set of values
+    // tuples structure can not be srinked, its a fixed size, we can not manipulate in size of tuple
+    let tup =(1,2.3,4);
+    println!("Tuple values tup1:{}, tup2:{} and tup3:{}",tup.0,tup.1,tup.2);
+    //tup.2 =1.1; // by default its a immutable in nature so we can not reassign values if its is immutable
+
+
+    let tuple1:(i32,f64,u8) =(-80,56.6,5);
+    println!("Tuple values tuple1:{}, tupple2:{} and tuple3:{}",tuple1.0,tuple1.1,tuple1.2);
+
+    let (x,y,z) = tuple1;
+    println!("Tuple values x:{}, y:{} and z:{}",x,y,z);
+
+    //mutable tuple - Reassign a value
+    let mut tup1:(i32,f64,u8) =(-1,1.1,111);
+    println!("Tuple values tup1:{}, tup2:{} and tup3:{}",tup1.0,tup1.1,tup1.2);
+    tup1.1=2.2;
+    println!("Tuple values tup1:{}, tup2:{} and tup3:{}",tup1.0,tup1.1,tup1.2);
+    //tup1.3 =4; not able to go beyond its size
+}
+fn arrays_datatype()
+{
+    // Allocate size 5 to array and initialize those 5 slots with 3
+    let arr1=[3;5];
+    for i in 0..5{
+        println!("at {} Possition {}",i+1,arr1[i]);
+    }
+    println!("----------------------------");
+    // definied array with 5 size and iniitalize it
+    let arr2:[i32;5] =[11,12,13,14,15];
+    for i in 0..5{
+        println!("at {} Possition {}",i+1,arr1[i]);
+    }
+
+   
+    /*
+    for i in 0..6{ // array size is 5 and we are printing up to 6
+        println!("at {} Possition {}",i+1,arr1[i]);
+    }
+    
+    DhanAnJays-MacBook:common_prog_concepts dhananjay$ cargo run
+    thread 'main' panicked at 'index out of bounds: the len is 5 but the index is 5', src/data_type.rs:120:43
+    note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+
+    The compilation didn’t produce any errors, but the program resulted in a 
+    runtime error and didn’t exit successfully. When you attempt to access an 
+    element using indexing, Rust will check that the index you’ve specified is 
+    less than the array length. If the index is greater than or equal to the array length, Rust will panic
+    */
+}
+pub fn basic_compound_datatypes()
+{
+    println!("----------------------------");
+    tuple_datatypes();
+    println!("----------------------------");
+    arrays_datatype();
+
 }

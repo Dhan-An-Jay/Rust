@@ -16,4 +16,7 @@ fn main() {
     println!("----------------------------");
     data_type::basics_datatypes();
     println!("----------------------------");
+    data_type::basic_compound_datatypes();
+    println!("----------------------------");
+
 }
