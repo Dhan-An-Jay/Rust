@@ -1,6 +1,7 @@
 mod data_type;      // basics of data types are included into this file 
 mod shadow_mutable_immutable;  // all immutable and mutable and shadow variable concept are implemented into this file 
 mod rust_functions_types; // functions types implementations in rust
+mod slice_types_basic;  // slices data type basics 
 
 fn main() {
     println!("----------------------------");
@@ -20,4 +21,8 @@ fn main() {
     data_type::basic_compound_datatypes();
     println!("----------------------------");
     rust_functions_types::functions_types();
+    println!("----------------------------");
+    slice_types_basic::slice_types_basics_implemntation();
+    println!("----------------------------");
+
 }
