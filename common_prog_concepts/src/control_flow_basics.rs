@@ -51,4 +51,30 @@ fn if_control_flow()
     /*loop {
         println!("again!");
     }*/
+
+    let mut i=0;
+
+    // while looping 
+    while i<10{
+        i=i+1;
+    }
+    println!("I Value:\t{}\n",i);
+
+    //for loop printing of 0..4 in reverse sequence 
+    //let mut i =0;
+    for i in (0..4).rev(){
+        println!("{}!", i);
+    }
+
+    //for loop printing of 0..4 in normal sequence 
+    let mut i =0;
+    for i in (0..4){
+        println!("{}!", i);
+    }
+
+    //array memeber retriving 
+    let a = [10, 20, 30, 40, 50];
+    for element in a.iter() {
+        println!("the value is: {}", element);
+    }
 }
