@@ -50,5 +50,43 @@ fn main() {
     let p:String = String::from("hallo");
     let q:String = p;
 
+    println!("Size of string is : {}",cal_string_len(&q));
+    let d  = return_string_reference(q);
+    // println!("Size of string is : {}",cal_string_len(&q));  after above move we can not use q because q is moved to d
 
+    // slices
+    slices_outpuy();
+}
+fn cal_string_len(str1 :&String) -> usize{
+    str1.len()
+}
+
+fn return_string_reference(str1:String)->String{
+   str1
+}
+
+fn slices_outpuy(){
+    // slices can not borrow as a mutable 
+    let s = String::from("hello world");
+    let hello = &s[0..5];
+    let world = &s[6..11];
+    println!("value of Hello is: {}, Value of World: {}",hello, world);
+
+    println!("first word from value :{}",first_word(&s));
+
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+
+    println!("slice value :{:?}",slice);
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+    &s[..]
 }
