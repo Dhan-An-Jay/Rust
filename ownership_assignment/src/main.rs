@@ -42,9 +42,13 @@ fn main() {
     let str1:String = str_new.clone(); // deep copy is clone
     println!("cloned String  : {}",str1);    
     
-    //copy fixed values 
+    //copy fixed values - 
     let x:i32 =30;
-    let y = x.copy();
-    println!("copy x {} to y value is : {}",y);   
+    let y:i32 = x;
+    println!("copy x {} to y value is : {}",x,y);   
+
+    let p:String = String::from("hallo");
+    let q:String = p;
+
 
 }
